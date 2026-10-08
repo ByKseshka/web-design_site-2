@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Портфолио графического дизайнера и UX/UI специалиста Поляковой Ксении">
+    <title>PORTFOLIO — Полякова Ксения</title>
+
+    <!-- Google Fonts: Unbounded + Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Unbounded:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ============ ЖИВЫЕ ЭФФЕКТЫ (canvas + курсор) ============ -->
+    <canvas id="cursorTrail" class="cursor-trail" aria-hidden="true"></canvas>
+    <div class="cursor-label" id="cursorLabel" aria-hidden="true"></div>
+
+    <!-- ============ HEADER / HERO ============ -->
+    <header class="hero" id="hero">
+        <!-- 3D-декор: светящиеся кубы -->
+        <div class="decor decor--cube-1" aria-hidden="true"></div>
+        <div class="decor decor--cube-2" aria-hidden="true"></div>
+        <div class="decor decor--glow" aria-hidden="true"></div>
+
+        <!-- Навигация -->
+        <nav class="nav glass" aria-label="Основная навигация">
+            <a href="#hero" class="nav__logo">PK<span>.</span></a>
+
+            <button class="nav__burger" id="burgerBtn" aria-label="Открыть меню" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+
+            <ul class="nav__list" id="navList">
+                <li><a href="#about">О себе</a></li>
+                <li><a href="#works">Работы</a></li>
+                <li><a href="#price">Услуги</a></li>
+                <li><a href="#steps">Этапы</a></li>
+                <li><a href="#contacts">Контакты</a></li>
+                <li>
+                    <button class="theme-toggle" id="themeToggle" aria-label="Переключить тему">
+                        <span class="theme-toggle__icon">🌙</span>
+                        <span class="theme-toggle__label">Тема</span>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Hero-контент -->
+        <div class="hero__content">
+            <p class="hero__eyebrow">Графический дизайнер / UX/UI</p>
+
+            <!-- Кинетический заголовок: буквы генерирует JS -->
+            <h1 class="hero__title" id="kineticTitle" aria-label="Portfolio"></h1>
+
+            <p class="hero__name">Полякова Ксения</p>
+            <p class="hero__subtitle">
+                Создаю визуальные истории, которые работают на бизнес.
+                Дизайн, который продаёт и запоминается.
+            </p>
+
+            <!-- Теги-таблетки -->
+            <ul class="tags" aria-label="Навыки">
+                <li class="tag">Маркетинг</li>
+                <li class="tag">Плакаты</li>
+                <li class="tag">Сайты</li>
+                <li class="tag">Инфографика</li>
+                <li class="tag">Иллюстрации</li>
+            </ul>
+
+            <a href="#contacts" class="btn btn--primary" data-cursor="НАПИСАТЬ">Связаться со мной</a>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- ============ О СЕБЕ ============ -->
+        <section class="section about" id="about">
+            <div class="container">
+                <h2 class="section__title reveal">О себе</h2>
+
+                <div class="about__grid">
+                    <div class="about__bio reveal">
+                        <p>
+                            Привет! Меня зовут Ксения, и я — дизайнер с более чем 3-летним опытом работы
+                            в digital и print-среде. Специализируюсь на создании айдентики, лендингов,
+                            инфографики и рекламных материалов.
+                        </p>
+                        <p>
+                            Мой подход — это сочетание эстетики и маркетинга. Я не просто рисую
+                            «красивые картинки», а решаю конкретные бизнес-задачи: повышаю конверсию,
+                            усиливаю узнаваемость бренда и делаю продукт понятным для пользователя.
+                        </p>
+                        <p>
+                            Работала с проектами из сфер e-commerce, образования, HoReCa и IT.
+                            Всегда на связи, соблюдаю дедлайны и люблю, когда клиент возвращается.
+                        </p>
+                    </div>
+
+                    <aside class="about__side reveal">
+                        <h3 class="about__subtitle">Инструменты</h3>
+                        <ul class="tools">
+                            <li class="tool">Photoshop</li>
+                            <li class="tool">Figma</li>
+                            <li class="tool">Illustrator</li>
+                            <li class="tool">After Effects</li>
+                            <li class="tool">Tilda</li>
+                        </ul>
+
+                        <h3 class="about__subtitle">Опыт</h3>
+                        <ul class="stats">
+                            <li><strong>3+</strong><span>года в дизайне</span></li>
+                            <li><strong>30+</strong><span>проектов</span></li>
+                            <li><strong>3</strong><span>довольных клиентов</span></li>
+                        </ul>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ МОИ РАБОТЫ ============ -->
+        <section class="section works" id="works">
+            <div class="container">
+                <h2 class="section__title reveal">Мои работы</h2>
+                <p class="section__lead reveal">Избранные кейсы, которыми я особенно горжусь.</p>
+
+                <div class="works__grid">
+
+                    <article class="card reveal" data-cursor="ОТКРЫТЬ">
+                        <div class="card__thumb">
+                            <img src="images/Скриншот 09-10-2026 010523.jpg"
+                                 alt="VAL CORCH - ВЕБ-САЙТ ДЛЯ КОМПАНИИ"
+                                 loading="lazy"
+                                 data-cursor="УВЕЛИЧИТЬ"
+                                 onerror="this.style.display='none'; this.parentElement.classList.add('card__thumb--1');">
+                        </div>
+                        <div class="card__body">
+                            <h3 class="card__title">VAL CORCH — ВЕБ-САЙТ ДЛЯ КОМПАНИИ</h3>
+                            <p class="card__text">
+                                Платформа для обучения игре в Valorant.
+                                Твой путь к radiant начинается здесь.
+                            </p>
+                            <a href="#" class="card__link">Смотреть кейс →</a>
+                        </div>
+                    </article>
+
+                    <article class="card reveal" data-cursor="ОТКРЫТЬ">
+                        <div class="card__thumb">
+                            <img src="images/Скриншот 09-10-2026 010923.jpg"
+                                 alt="AURATOME - МАГАЗИН ДУХОВ"
+                                 loading="lazy"
+                                 data-cursor="УВЕЛИЧИТЬ"
+                                 onerror="this.style.display='none'; this.parentElement.classList.add('card__thumb--2');">
+                        </div>
+                        <div class="card__body">
+                            <h3 class="card__title">AURATOME — МАГАЗИН ДУХОВ</h3>
+                            <p class="card__text">
+                                Уникальная опция магазина парфюмерии.
+                                Тёплый минимализм с характером.
+                            </p>
+                            <a href="#" class="card__link">Смотреть кейс →</a>
+                        </div>
+                    </article>
+
+                    <article class="card reveal" data-cursor="ОТКРЫТЬ">
+                        <div class="card__thumb">
+                            <img src="images/Скриншот 09-10-2026 011008.jpg"
+                                 alt="РАМЕН ХАУС - САЙТ С МЕНЮ"
+                                 loading="lazy"
+                                 data-cursor="УВЕЛИЧИТЬ"
+                                 onerror="this.style.display='none'; this.parentElement.classList.add('card__thumb--3');">
+                        </div>
+                        <div class="card__body">
+                            <h3 class="card__title">РАМЕН ХАУС — САЙТ С МЕНЮ</h3>
+                            <p class="card__text">
+                                Добро пожаловать в наше уютное кафе, где царит дух настоящей японской кухни.
+                            </p>
+                            <a href="#" class="card__link">Смотреть кейс →</a>
+                        </div>
+                    </article>
+
+                    <article class="card reveal" data-cursor="ОТКРЫТЬ">
+                        <div class="card__thumb">
+                            <img src="images/image 18-Photoroom.png"
+                                 alt="СИМВОЛЬНАЯ СТИЛИЗАЦИЯ"
+                                 loading="lazy"
+                                 data-cursor="УВЕЛИЧИТЬ"
+                                 onerror="this.style.display='none'; this.parentElement.classList.add('card__thumb--4');">
+                        </div>
+                        <div class="card__body">
+                            <h3 class="card__title">СИМВОЛЬНАЯ СТИЛИЗАЦИЯ</h3>
+                            <p class="card__text">
+                                Логотип для канцелярии и одежды.
+                            </p>
+                            <a href="#" class="card__link">Смотреть кейс →</a>
+                        </div>
+                    </article>
+
+                    <article class="card reveal" data-cursor="ОТКРЫТЬ">
+                        <div class="card__thumb">
+                            <img src="images/задание_6_Макет плаката.png"
+                                 alt="МАКЕТ ПЛАКАТА И ОТКРЫТКИ ДЛЯ ХЭЛЛОУИНА"
+                                 loading="lazy"
+                                 data-cursor="УВЕЛИЧИТЬ"
+                                 onerror="this.style.display='none'; this.parentElement.classList.add('card__thumb--5');">
+                        </div>
+                        <div class="card__body">
+                            <h3 class="card__title">МАКЕТ ПЛАКАТА И ОТКРЫТКИ ДЛЯ ХЭЛЛОУИНА</h3>
+                            <p class="card__text">
+                                Дизайн плаката и открытка на мероприятие в честь праздника хэллоуин.
+                            </p>
+                            <a href="#" class="card__link">Смотреть кейс →</a>
+                        </div>
+                    </article>
+
+                    <article class="card reveal" data-cursor="ОТКРЫТЬ">
+                        <div class="card__thumb">
+                            <img src="images/Untitled1.png"
+                                 alt="3D-ЛОКАЦИЯ"
+                                 loading="lazy"
+                                 data-cursor="УВЕЛИЧИТЬ"
+                                 onerror="this.style.display='none'; this.parentElement.classList.add('card__thumb--6');">
+                        </div>
+                        <div class="card__body">
+                            <h3 class="card__title">3D-ЛОКАЦИЯ</h3>
+                            <p class="card__text">
+                                Локация кухни для игры.
+                            </p>
+                            <a href="#" class="card__link">Смотреть кейс →</a>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ ПРАЙС-ЛИСТ ============ -->
+        <section class="section price" id="price">
+            <div class="container">
+                <h2 class="section__title reveal">Прайс-лист</h2>
+                <p class="section__lead reveal">Прозрачные цены без скрытых доплат.</p>
+
+                <div class="price__grid">
+                    <div class="price-card reveal">
+                        <h3 class="price-card__name">Лендинг пейдж</h3>
+                        <p class="price-card__value">800 ₽</p>
+                        <p class="price-card__desc">Одностраничный сайт под ключ</p>
+                    </div>
+                    <div class="price-card reveal">
+                        <h3 class="price-card__name">Дизайн карточек товара</h3>
+                        <p class="price-card__value">600 ₽</p>
+                        <p class="price-card__desc">За одну карточку с инфографикой</p>
+                    </div>
+                    <div class="price-card reveal">
+                        <h3 class="price-card__name">Логотип + айдентика</h3>
+                        <p class="price-card__value">1 500 ₽</p>
+                        <p class="price-card__desc">Логотип, цвета, шрифты, гайдлайн</p>
+                    </div>
+                    <div class="price-card reveal">
+                        <h3 class="price-card__name">Плакат / афиша</h3>
+                        <p class="price-card__value">400 ₽</p>
+                        <p class="price-card__desc">Digital или печатный формат</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ ДОПОЛНИТЕЛЬНЫЕ УСЛУГИ ============ -->
+        <section class="section extras" id="extras">
+            <div class="container">
+                <h2 class="section__title reveal">Дополнительные услуги</h2>
+
+                <ul class="extras__list reveal">
+                    <li>Ретушь фотографий</li>
+                    <li>Обработка изображений</li>
+                    <li>Написание текстов</li>
+                    <li>Адаптация макетов</li>
+                    <li>Подготовка к печати</li>
+                    <li>Консультация по дизайну</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ============ ЭТАПЫ РАБОТЫ ============ -->
+        <section class="section steps" id="steps">
+            <div class="container">
+                <h2 class="section__title reveal">Этапы работы</h2>
+
+                <ol class="timeline">
+                    <li class="timeline__item reveal">
+                        <span class="timeline__num">01</span>
+                        <h3 class="timeline__title">Брифинг</h3>
+                        <p class="timeline__text">Обсуждаем задачу, цели и пожелания.</p>
+                    </li>
+                    <li class="timeline__item reveal">
+                        <span class="timeline__num">02</span>
+                        <h3 class="timeline__title">Концепция</h3>
+                        <p class="timeline__text">Собираю мудборд и предлагаю направление.</p>
+                    </li>
+                    <li class="timeline__item reveal">
+                        <span class="timeline__num">03</span>
+                        <h3 class="timeline__title">Дизайн</h3>
+                        <p class="timeline__text">Отрисовываю макет, вношу правки.</p>
+                    </li>
+                    <li class="timeline__item reveal">
+                        <span class="timeline__num">04</span>
+                        <h3 class="timeline__title">Реализация</h3>
+                        <p class="timeline__text">Передаю исходники и сопровождаю запуск.</p>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- ============ КОНТАКТЫ ============ -->
+        <section class="section contacts" id="contacts">
+            <div class="container">
+                <h2 class="section__title reveal">Контакты</h2>
+                <p class="section__lead reveal">Открыта к новым проектам и коллаборациям.</p>
+
+                <div class="contacts__grid">
+                    <form class="form reveal" id="contactForm" novalidate>
+                        <label class="form__field">
+                            <span>Ваше имя</span>
+                            <input type="text" name="name" id="nameInput" placeholder="Иван Иванов" required>
+                        </label>
+                        <label class="form__field">
+                            <span>Email</span>
+                            <input type="email" name="email" id="emailInput" placeholder="mail@example.com" required>
+                        </label>
+                        <label class="form__field">
+                            <span>Сообщение</span>
+                            <textarea name="message" id="messageInput" rows="4" placeholder="Опишите задачу..." required></textarea>
+                        </label>
+                        <button type="submit" class="btn btn--primary" data-cursor="ОТПРАВИТЬ">Отправить</button>
+                        <p class="form__status" id="formStatus" aria-live="polite"></p>
+                    </form>
+
+                    <aside class="contacts__side reveal">
+                        <a href="https://t.me/by_keshaaaaa" class="contact-link" target="_blank" rel="noopener" data-cursor="НАПИСАТЬ">
+                            <span class="contact-link__icon">✈</span>
+                            <span>by_keshaaaaa</span>
+                        </a>
+                        <a href="mailto:soba4cka.xiusha@yandex.ru" class="contact-link" data-cursor="НАПИСАТЬ">
+                            <span class="contact-link__icon">✉</span>
+                            <span>soba4cka.xiusha@yandex.ru</span>
+                        </a>
+
+                        <div class="qr">
+                            <div class="qr__box">
+                                <img src="images/f6a70be90b9e0eea8429ce97b8b3c106.png" alt="QR-код"
+                                     onerror="this.parentElement.innerHTML='<span>QR</span>';">
+                            </div>
+                            <p class="qr__text">Отсканируйте, чтобы написать мне</p>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+        <div class="container">
+            <p class="footer__line">Разработано с использованием <strong>ChatGPT (OpenAI)</strong></p>
+            <p class="footer__line">Время выполнения задания: <strong>~2 часа</strong></p>
+            <p class="footer__line footer__line--js">
+                <strong>Реализованный функционал на JavaScript:</strong>
+                переключение светлой/тёмной темы, анимация появления при скролле (Intersection Observer),
+                валидация формы, бургер-меню, кинетическая типографика (реакция букв на курсор и скролл),
+                интерактивные 3D-кубы, контекстный курсор (ОТКРЫТЬ / НАПИСАТЬ / УВЕЛИЧИТЬ),
+                шлейф из частиц за курсором на canvas.
+            </p>
+            <p class="footer__copy">© 2026 Полякова Ксения. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
